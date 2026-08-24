@@ -3,194 +3,460 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio</title>
+
+    <title>Portfolio - Hanif Aprillian</title>
+
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/mycss.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand p-3 bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="assets/img/logo.png" alt="Bootstrap" width="50" height="50"; style="border-radius: 50%;">
-                </a>
-                <ul class="nav justify-content-end">
-                    <a class="btn btn-primary" href="#" role="button">Home</a>
+<body data-bs-spy="scroll"
+      data-bs-target="#navbarMenu"
+      data-bs-offset="100"
+      tabindex="0">
+<!-- =========================
+     NAVBAR
+========================= -->
+<header>
+    <nav class="navbar navbar-expand-md p-3 fixed-top">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="#home">
+                <img src="assets/img/logo.png" alt="Logo">
+            </a>
+
+            <!-- Hamburger -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto align-items-md-center">
+
                     <li class="nav-item">
-                        <a class="nav-link text-white " href="#">Services</a>
+                        <a class="nav-link text-white"
+                           href="#home">
+                            Home
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link text-white " href="#">About</a>
+                        <a class="nav-link text-white"
+                           href="#services">
+                            Services
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link text-white " href="#">Contact</a>
+                        <a class="nav-link text-white"
+                           href="#about">
+                            About
+                        </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white"
+                           href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
                 </ul>
-            </div>
-        </div>
-        </nav>
-    </header>
-
-    <section class="py-5 my-md-4">
-        <div class="container">
-            <div class="row align-items-center gy-5">
-                
-                <!-- Kolom Kiri: Teks Profil & Tombol -->
-                <div class="col-lg-6">
-                    <p class="text-secondary mb-1">Hello, I'm</p>
-                    <h5 class="text-brand fw-bold mb-3">Hanif Aprillian</h5>
-                    
-                    <h1 class="display-4 fw-bold text-dark mb-3" style="line-height: 1.2;">
-                        Mechatronics Engineering
-                    </h1>
-                    
-                    <p class="text-muted mb-4 pe-lg-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                    </p>
-                    
-                    <div class="d-flex flex-wrap gap-3">
-                        <button type="button" class="btn btn-primary btn-sm">Hire Me</button>
-                        <button type="button" class="btn btn-secondary btn-sm">Download CV</button>
-                    </div>
-                </div>
-                <!-- Kolom Kanan: Foto Profil & Lingkaran Aksen -->
-                <div class="col-lg-6 text-center">
-                    <div class="hero-img-wrapper">
-                        <!-- Bulatan Oranye -->
-                        <div class="hero-bg-circle"></div>
-                        
-                        <!-- Foto Anda (Gunakan foto berbformat .png tanpa background) -->
-                        <img src="assets/img/SLPT99609.png" alt="Hanif Aprillian" class="img-fluid hero-img">
-                    </div>
-                </div>
 
             </div>
+
         </div>
-    </section>
+    </nav>
+</header>
 
-    <section class="py-5 my-md-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="text-center mb-4">My Expertise</h2>
-                    <p class="text-center text-muted mb-5">Here are some of the skills I possess:</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title">AUTOMATION</h5>
-                            <img src="assets/img/robot.png" alt="Robot Icon" class="img-fluid mb-2" style="width: 100px; height: 100px;">
-                            <p class="card-text">Description of Skill 1.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title">ELECTRICAL</h5>
-                            <img src="assets/img/Electrical.png" alt="Electrical Icon" class="img-fluid mb-2" style="width: 100px; height: 100px;">
-                            <p class="card-text">Description of Skill 2.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title">PLC PROGRAMMING</h5>
-                            <img src="assets/img/PLC.png" alt="PLC Icon" class="img-fluid mb-2" style="width: 100px; height: 100px;">
-                            <p class="card-text">Description of Skill 3.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- =========================
+     HERO
+========================= -->
+<section id="home" class="hero">
 
-    <section class="py-5 my-md-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="text-center mb-4">About Me</h2>
-                </div>
-                                <div class="row">
-                                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <div class="card">
-                                                        <div class="card-body">
-                                                                <h5 class="card-title">Special title treatment</h5>
-                                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                                <div class="card">
-                                                        <div class="card-body">
-                                                                <h5 class="card-title">Special title treatment</h5>
-                                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                </div>
-            </div>
-        </div>
-    </section>
-
-
-<section class="py-5 bg-dark text-white">
     <div class="container">
-        
-        <div class="row">
-            
-            <!-- Judul -->
-            <div class="col-12">
-                <h2 class="text-center mb-4">Contact Me</h2>
-            </div>
 
-            <!-- Contact -->
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <img src="assets/img/mail.png"
-                         alt="Email Icon"
-                         class="me-2"
-                         style="width: 35px; height: 25px;">
+        <div class="row align-items-center">
 
-                    <a href="mailto:hanifaprillian1987@gmail.com">
-                        hanifaprillian1987@gmail.com
-                    </a>
+            <!-- Teks -->
+            <div class="col-lg-6">
+
+                <p class="text-secondary mb-2">
+                    Hello, I'm
+                </p>
+
+                <div class="hero-name">
+                    Hanif Aprillian
                 </div>
 
-                <div>
-                    <img src="assets/img/erfgergerg.jpg"
-                         alt="Phone Icon"
-                         class="me-2"
-                         style="width: 35px; height: 25px;">
+                <h1 class="mt-3">
+                    Mechatronics
+                    <br>
+                    Engineering
+                </h1>
 
-                    <a href="tel:+6283113683400">
-                        +62 831-1368-3400
+                <p class="hero-description mt-4">
+                    I am a Mechatronics Engineering student who is
+                    interested in automation, electrical systems,
+                    robotics, and PLC programming.
+                </p>
+
+                <div class="hero-buttons mt-4">
+
+                    <a href="#contact"
+                       class="btn btn-primary me-2">
+                        Hire Me
                     </a>
+
+                    <a href="#about"
+                       class="btn btn-secondary">
+                        Download CV
+                    </a>
+
                 </div>
+
             </div>
 
-            <!-- Social Media -->
-            <div class="col-md-6">
-                <p class="fw-bold">My Social Media :</p>
-                <div class="btn-group me-2" role="group" aria-label="Second group">
-    <button type="button" class="btn btn-dark"><img src="assets/img/ld.png" alt="LinkedIn" style="width: 25px; height: 25px;"></button>
-    <button type="button" class="btn btn-dark"><img src="assets/img/x.png" alt="Twitter" style="width: 25px; height: 25px;"></button>
-    <button type="button" class="btn btn-dark"><img src="assets/img/ig.png" alt="Instagram" style="width: 30px; height: 30px;"></button>
-  </div>
+
+            <!-- Foto -->
+            <div class="col-lg-6 text-center">
+
+                <div class="profile-wrapper">
+
+                    <img src="assets/img/SLPT99609.png"
+                         alt="Hanif Aprillian"
+                         class="hero-img">
+
+                </div>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
-<footer class="py-4 bg-dark text-white text-center">
-    <div class="container">
-        <p class="mb-0">
-            &copy; 2026 Hanif Aprillian. All rights reserved.
+
+<!-- =========================
+     EXPERTISE
+========================= -->
+<section id="services"
+         class="expertise-section py-5">
+
+    <div class="container py-5">
+
+        <h2 class="section-title">
+            My Expertise
+        </h2>
+
+        <p class="section-subtitle">
+            Here are some of the skills I possess.
         </p>
+
+        <div class="row g-4">
+
+            <!-- Automation -->
+            <div class="col-md-4">
+
+                <div class="skill-card text-center">
+
+                    <h5>
+                        AUTOMATION
+                    </h5>
+
+                    <img src="assets/img/robot.png"
+                         alt="Robot Icon">
+
+                    <p class="text-muted">
+                        Industrial automation,
+                        robotics, and control systems.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Electrical -->
+            <div class="col-md-4">
+
+                <div class="skill-card text-center">
+
+                    <h5>
+                        ELECTRICAL
+                    </h5>
+
+                    <img src="assets/img/Electrical.png"
+                         alt="Electrical Icon">
+
+                    <p class="text-muted">
+                        Electrical systems,
+                        circuits, sensors, and control.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PLC -->
+            <div class="col-md-4">
+
+                <div class="skill-card text-center">
+
+                    <h5>
+                        PLC PROGRAMMING
+                    </h5>
+
+                    <img src="assets/img/PLC.png"
+                         alt="PLC Icon">
+
+                    <p class="text-muted">
+                        PLC programming,
+                        ladder logic, and automation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+<section id="about"
+         class="about-section py-5">
+
+    <div class="container py-5">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <p class="section-subtitle">
+            Get to know me and my interests.
+        </p>
+
+
+        <div class="row g-4">
+
+            <!-- About 1 -->
+            <div class="col-md-6">
+
+                <div class="card about-card h-100">
+
+                    <div class="card-body p-4">
+
+                        <h5>
+                            My Experience
+                        </h5>
+
+                        
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- About 2 -->
+            <div class="col-md-6">
+
+                <div class="card about-card h-100">
+
+                    <div class="card-body p-4">
+
+                         <h5>
+                                My Performance
+                        </h5>
+
+                        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+<section id="contact"
+         class="contact-section py-5">
+
+    <div class="container py-5">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <div class="row g-5"; style="margin-top: 10px;">
+
+            <!-- Contact Information -->
+            <div class="col-md-5">
+
+                <div class="contact-info">
+
+                    <h4 class="mb-4">
+                        Let's Work Together
+                    </h4>
+
+                    <p class="text-secondary">
+                        Have a project or opportunity?
+                        Feel free to contact me.
+                    </p>
+
+
+                    <!-- Email -->
+                    <div class="contact-item">
+
+                        <img src="assets/img/mail.png"
+                             alt="Email">
+
+                        <a href="mailto:hanifaprillian1987@gmail.com">
+                            hanifaprillian1987@gmail.com
+                        </a>
+
+                    </div>
+
+
+                    <!-- Phone -->
+                    <div class="contact-item">
+
+                        <img src="assets/img/phone.png"
+                             alt="Phone">
+
+                        <a href="tel:+6283113683400">
+                            +62 831-1368-3400
+                        </a>
+
+                    </div>
+
+
+                    <!-- Social Media -->
+                    <div class="mt-4">
+
+                        <button class="social-btn">
+                            <img src="assets/img/ld.png"
+                                 alt="LinkedIn">
+                        </button>
+
+                        <button class="social-btn">
+                            <img src="assets/img/x.png"
+                                 alt="X">
+                        </button>
+
+                        <button class="social-btn"
+                            onclick="window.open('https://www.instagram.com/hanf__404?igsh=aWlmZjVzNHZjd25s', '_blank')">
+
+                            <img src="assets/img/ig.png"alt="Instagram">
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+            <div class="col-md-7">
+
+                <div class="contact-form">
+
+                    <h4 class="text-dark mb-4">
+                        Send Me a Message
+                    </h4>
+
+                    <div class="mb-3">
+
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Your Name">
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <input type="email"
+                               class="form-control"
+                               placeholder="Your Email">
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <textarea class="form-control"
+                                  rows="5"
+                                  placeholder="Your Message"></textarea>
+
+                    </div>
+
+
+                    <button class="btn btn-primary send-btn">
+                        Send Message
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="py-4 text-center">
+
+    <div class="container">
+
+        <p class="mb-0">
+            © 2026 Hanif Aprillian.
+            All rights reserved.
+        </p>
+
+    </div>
+
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/myjs.js"></script>
+
 </body>
 </html>
