@@ -458,3 +458,45 @@ footer {
     background-color: #0d6efd;
     border-radius: 5px;
 }
+
+.experience-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.experience-btn {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background: #f1f5f9;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+    transition: 0.3s;
+}
+
+.experience-btn img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.experience-btn span {
+    font-size: 12px;
+    text-align: center;
+}
+
+.experience-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
