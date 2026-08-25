@@ -13,6 +13,10 @@
       data-bs-target="#navbarMenu"
       data-bs-offset="100"
       tabindex="0">
+
+<div class="scroll-progress">
+    <div id="scrollProgress"></div>
+</div>
 <!-- =========================
      NAVBAR
 ========================= -->
@@ -113,9 +117,9 @@
 
                 <div class="hero-buttons mt-4">
 
-                    <a href="#contact"
+                    <a href="#Project"
                        class="btn btn-primary me-2">
-                        Hire Me
+                        My Project
                     </a>
 
                     <a href="#about"
@@ -241,8 +245,11 @@
 <!-- =========================
      ABOUT
 ========================= -->
-<section id="about"
-         class="about-section py-5">
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="about-section py-5">
 
     <div class="container py-5">
 
@@ -255,55 +262,153 @@
         </p>
 
 
+        <!-- =========================
+             ROW ATAS
+        ========================= -->
+
         <div class="row g-4">
 
-            <!-- About 1 -->
-            <div class="col-md-6">
+            <!-- MY EXPERIENCE -->
+            <div class="col-lg-6">
 
-                <div class="card about-card h-100">
+                <div class="card about-card experience-card h-100">
 
-                   <div class="card-body p-4">
-    <h5>My Experience</h5>
+                    <div class="card-body p-4">
 
-    <div class="experience-items">
+                        <h5>
+                            My Experience
+                        </h5>
 
-        <!-- Item 1 -->
-        <button class="experience-btn">
-            <img src="assets/img/topi.png" alt="TOPI">
-            <span class="text-primary">ATMI Surakarta</span>
-        </button>
+                        <div class="experience-items">
 
-        <!-- Item 2 -->
-        <button class="experience-btn">
-            
-        </button>
+                            <!-- Experience 1 -->
+                            <button class="experience-btn">
 
-        <!-- Item 3 -->
-        <button class="experience-btn">
-            
-        </button>
+                                <img src="assets/img/ATMI.png"
+                                     alt="ATMI">
 
-    </div>
-</div>
+                            </button>
+
+
+                            <!-- Experience 2 -->
+                            <button class="experience-btn">
+
+                            </button>
+
+
+                            <!-- Experience 3 -->
+                            <button class="experience-btn">
+
+                            </button>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <!-- About 2 -->
-            <div class="col-md-6">
+            <!-- MY PERFORMANCE -->
+            <div class="col-lg-6">
 
-                <div class="card about-card h-100">
+                <div class="card about-card performance-card h-100">
 
                     <div class="card-body p-4">
 
-                         <h5>
-                                My Performance
+                        <h5>
+                            My Performance
                         </h5>
 
-                        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                        <div class="chart-container">
 
+                            <canvas id="myChart">
+                            </canvas>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MY PROJECT
+        ========================= -->
+
+        <div class="row mt-4" id="Project">
+
+            <div class="col-12">
+
+                <div class="card about-card project-card">
+
+                    <div class="card-body p-4">
+
+                        <h5>
+                            My Project
+                        </h5>
+
+
+                        <div class="project-items">
+
+
+                            <!-- PROJECT 1 -->
+                            <button class="project-btn">
+
+                                <div class="project-content">
+
+                                    <img src="assets/img/project.jpg"
+                                         alt="Project 1">
+
+                                    <span>
+                                        Project 1
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+
+                            <!-- PROJECT 2 -->
+                            <button class="project-btn">
+
+                                <div class="project-content">
+
+                                    <img src="assets/img/project.jpg"
+                                         alt="Project 2">
+
+                                    <span>
+                                        Project 2
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+
+                            <!-- PROJECT 3 -->
+                            <button class="project-btn">
+
+                                <div class="project-content">
+
+                                    <img src="assets/img/project.jpg"
+                                         alt="Project 3">
+
+                                    <span>
+                                        Project 3
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+
+                        </div>
 
                     </div>
 

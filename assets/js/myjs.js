@@ -25,3 +25,25 @@ const ctx = document.getElementById('myChart').getContext('2d');
         }
       }
     });
+
+    /* =========================
+   SCROLL PROGRESS BAR
+========================= */
+
+const scrollProgress = document.getElementById("scrollProgress");
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop = window.scrollY;
+
+    const documentHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const scrollPercentage =
+        (scrollTop / documentHeight) * 100;
+
+    scrollProgress.style.width =
+        scrollPercentage + "%";
+
+});
