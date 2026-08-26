@@ -346,7 +346,7 @@ section {
 
     width: 100%;
 
-    height: 250px;
+    height: 300px;
 }
 
 .chart-container canvas {
@@ -757,3 +757,108 @@ footer {
 
     transition: width 0.05s linear;
 }
+
+
+/* =========================================
+   MY EXPERIENCE - FULL CARD FLIP
+   Layout depan tetap seperti semula
+   ========================================= */
+
+.experience-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.experience-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+}
+
+.experience-wrapper.flipped .experience-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Kedua sisi card */
+.experience-front,
+.experience-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+
+    border-radius: 15px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Sisi depan */
+.experience-front {
+    z-index: 2;
+}
+
+/* Sisi belakang */
+.experience-back {
+    transform: rotateY(180deg);
+}
+
+/* Layout 3 kotak tetap seperti tampilan awal */
+.experience-items {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.experience-btn {
+    width: 90px;
+    height: 100px;
+    padding: 10px;
+
+    border: none;
+    border-radius: 12px;
+    background-color: #f1f5f9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.experience-btn img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .experience-wrapper,
+    .experience-card-inner,
+    .experience-front,
+    .experience-back {
+        min-height: 380px;
+    }
+
+    .experience-items {
+        gap: 10px;
+    }
+
+    .experience-btn {
+        width: 80px;
+        height: 90px;
+    }
+
+    .experience-btn img {
+        width: 65px;
+        height: 65px;
+    }
+}
+

@@ -241,10 +241,6 @@
 
 </section>
 
-
-<!-- =========================
-     ABOUT
-========================= -->
 <!-- =========================
      ABOUT
 ========================= -->
@@ -268,46 +264,84 @@
 
         <div class="row g-4">
 
-            <!-- MY EXPERIENCE -->
-            <div class="col-lg-6">
+           <!-- MY EXPERIENCE -->
+<div class="col-lg-6">
 
-                <div class="card about-card experience-card h-100">
+    <div class="experience-wrapper">
 
-                    <div class="card-body p-4">
+    <div class="experience-card-inner">
 
-                        <h5>
-                            My Experience
-                        </h5>
+        <!-- DEPAN -->
+        <div class="card about-card experience-front h-100">
 
-                        <div class="experience-items">
+            <div class="card-body p-4">
 
-                            <!-- Experience 1 -->
-                            <button class="experience-btn">
+                <h5>My Experience</h5>
 
-                                <img src="assets/img/ATMI.png"
-                                     alt="ATMI">
+                <div class="experience-items">
 
-                            </button>
+                    <button
+                        type="button"
+                        class="experience-btn"
+                        onclick="showExperience(0, event)">
 
+                        <img src="assets/img/ATMI.png"
+                             alt="ATMI">
 
-                            <!-- Experience 2 -->
-                            <button class="experience-btn">
+                    </button>
 
-                            </button>
+                    <button
+                        type="button"
+                        class="experience-btn"
+                        onclick="showExperience(1, event)">
+                    </button>
 
-
-                            <!-- Experience 3 -->
-                            <button class="experience-btn">
-
-                            </button>
-
-                        </div>
-
-                    </div>
+                    <button
+                        type="button"
+                        class="experience-btn"
+                        onclick="showExperience(2, event)">
+                    </button>
 
                 </div>
 
             </div>
+
+        </div>
+
+
+        <!-- BELAKANG -->
+        <div class="card experience-back h-100">
+
+            <div class="card-body p-4">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary btn-sm mb-3"
+                    onclick="backToExperience(event)">
+
+                    ← Back
+
+                </button>
+
+                <h5 id="experienceTitle">
+                    Experience
+                </h5>
+
+                <p id="experienceDescription"></p>
+
+                <p id="experiencePosition"></p>
+
+                <p id="experiencePeriod"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
 
 
             <!-- MY PERFORMANCE -->
@@ -572,7 +606,7 @@
 
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+<script src="assets/js/chart.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/myjs.js"></script>
 
