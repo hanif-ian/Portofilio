@@ -344,29 +344,118 @@
 </div>
 
 
-            <!-- MY PERFORMANCE -->
-            <div class="col-lg-6">
+           <!-- MY PERFORMANCE -->
+<div class="col-lg-6">
 
-                <div class="card about-card performance-card h-100">
+    <div class="performance-wrapper">
 
-                    <div class="card-body p-4">
+        <div class="performance-card-inner">
 
-                        <h5>
+            <!-- ================= FRONT ================= -->
+            <div class="card about-card performance-front h-100">
+
+                <div class="card-body p-4">
+
+                    <div class="performance-header">
+
+                        <h5 class="mb-0">
                             My Performance
                         </h5>
 
-                        <div class="chart-container">
+                        <button
+                            type="button"
+                            class="vote-btn"
+                            onclick="openVote(event)">
 
-                            <canvas id="myChart">
-                            </canvas>
+                            Vote
 
-                        </div>
+                        </button>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas id="myChart"></canvas>
 
                     </div>
 
                 </div>
 
             </div>
+
+
+            <!-- ================= BACK ================= -->
+            <div class="card performance-back h-100">
+
+                <div class="card-body p-4">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary btn-sm mb-3"
+                        onclick="closeVote(event)">
+
+                        ← Back
+
+                    </button>
+
+
+                    <div class="vote-options">
+
+                        <button
+                            type="button"
+                            onclick="giveVote('Very Dissatisfied')"; style="background-color: red;">
+
+                            Very Dissatisfied
+
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="giveVote('Dissatisfied')"; style="background-color: rgb(255, 166, 0)";>
+
+                            Dissatisfied
+
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="giveVote('Neutral')"; style="background-color: rgb(255, 251, 0)">
+
+                            Neutral
+
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="giveVote('Satisfied')"; style="background-color: rgb(166, 255, 0);">
+
+                            Satisfied
+
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="giveVote('Very Satisfied')"; style="background-color: rgb(0, 255, 0);">
+
+                            Very Satisfied
+
+                        </button>
+
+                    </div>
+
+
+                    <p id="voteResult"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
         </div>
 

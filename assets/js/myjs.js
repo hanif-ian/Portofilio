@@ -130,3 +130,40 @@ function backToExperience(event) {
 
     card.classList.remove("flipped");
 }
+
+function openVote(event) {
+
+    // Mencegah event naik ke parent
+    event.stopPropagation();
+
+    const card = document.querySelector(
+        ".performance-wrapper"
+    );
+
+    card.classList.add("flipped");
+}
+
+
+function closeVote(event) {
+
+    event.stopPropagation();
+
+    const card = document.querySelector(
+        ".performance-wrapper"
+    );
+
+    card.classList.remove("flipped");
+
+    // Reset hasil vote
+    document.getElementById("voteResult").innerText = "";
+}
+
+
+function giveVote(value) {
+
+    const result =
+        document.getElementById("voteResult");
+
+    result.innerText =
+        "Thank you! your vote is " + value;
+}
