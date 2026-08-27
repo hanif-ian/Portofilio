@@ -1,0 +1,41 @@
+ <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "20242024_db";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, nama, deskripsi, gambar FROM service";
+// Execute the SQL query
+$result = $conn->query($sql);
+
+// Process the result set
+if ($result->num_rows > 0) {
+  // Output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo '<div class="col-md-4">';
+
+    echo '<div class="skill-card text-center">';
+
+    echo '<h5>' . $row['nama'] . '</h5>';
+
+    echo '<img src="assets/img/'. $row['gambar'] .'" alt="'. $row['gambar'] .'">';
+
+    echo '<p class="text-muted">' . $row['deskripsi'] . '</p>';
+
+    echo '</div>';
+
+    echo '</div>';
+  }
+} else {
+  echo "0 results";
+}
+
+$conn->close();
+?>
