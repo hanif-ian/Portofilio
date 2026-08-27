@@ -862,3 +862,168 @@ footer {
     }
 }
 
+/* =================================
+   PERFORMANCE FLIP CARD
+   ================================= */
+
+.performance-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+
+    perspective: 1200px;
+}
+
+
+/* Bagian yang berputar */
+
+.performance-card-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.7s ease;
+}
+
+
+/* Flip */
+
+.performance-wrapper.flipped .performance-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* Depan dan belakang */
+
+.performance-front,
+.performance-back {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+
+    border-radius: 15px;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* Depan */
+
+.performance-front {
+    transform: rotateY(0deg);
+}
+
+
+/* Belakang */
+
+.performance-back {
+    transform: rotateY(180deg);
+}
+
+
+/* =================================
+   PERFORMANCE HEADER
+   ================================= */
+
+.performance-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+/* =================================
+   VOTE BUTTON
+   ================================= */
+
+.vote-btn {
+    border: none;
+
+    background: #f1f5f9;
+
+    color: #212529;
+
+    padding: 7px 14px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.vote-btn:hover {
+    background: #0d6efd;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   VOTE OPTIONS
+   ================================= */
+
+.vote-options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.vote-options button {
+    border: 1px solid #dee2e6;
+
+    background: white;
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+    height: 35px;
+}
+
+
+.vote-options button:hover {
+    background: #0d6efd;
+
+    transform: scale(1.02);
+
+    color: white;
+}
+
+
+#voteResult {
+    margin-top: 20px;
+
+    font-weight: 600;
+
+    color: #0d6efd;
+}
