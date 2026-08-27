@@ -317,31 +317,6 @@ if ($result->num_rows > 0) {
 <?php
 $conn->close();
 ?>
-                <!-- <div class="experience-items">
-
-                    <button
-                        type="button"
-                        class="experience-btn"
-                        onclick="showExperience(0, event)">
-
-                        <img src="assets/img/ATMI.png"
-                             alt="ATMI">
-
-                    </button>
-
-                    <button
-                        type="button"
-                        class="experience-btn"
-                        onclick="showExperience(1, event)">
-                    </button>
-
-                    <button
-                        type="button"
-                        class="experience-btn"
-                        onclick="showExperience(2, event)">
-                    </button>
-
-                </div> -->
 
             </div>
 
@@ -439,52 +414,65 @@ $conn->close();
                     </button>
 
 
-                    <div class="vote-options">
+                   <div class="vote-options">
 
-                        <button
-                            type="button"
-                            onclick="giveVote('Very Dissatisfied')"; style="background-color: red;">
+    <button
+        type="button"
+        class="vote-option"
+        onclick="giveVote('Very Dissatisfied', this)"
+        style="background-color: red;">
 
-                            Very Dissatisfied
+        Very Dissatisfied
 
-                        </button>
-
-                        <button
-                            type="button"
-                            onclick="giveVote('Dissatisfied')"; style="background-color: rgb(255, 166, 0)";>
-
-                            Dissatisfied
-
-                        </button>
-
-                        <button
-                            type="button"
-                            onclick="giveVote('Neutral')"; style="background-color: rgb(255, 251, 0)">
-
-                            Neutral
-
-                        </button>
-
-                        <button
-                            type="button"
-                            onclick="giveVote('Satisfied')"; style="background-color: rgb(166, 255, 0);">
-
-                            Satisfied
-
-                        </button>
-
-                        <button
-                            type="button"
-                            onclick="giveVote('Very Satisfied')"; style="background-color: rgb(0, 255, 0);">
-
-                            Very Satisfied
-
-                        </button>
-
-                    </div>
+    </button>
 
 
-                    <p id="voteResult"></p>
+    <button
+        type="button"
+        class="vote-option"
+        onclick="giveVote('Dissatisfied', this)"
+        style="background-color: rgb(255, 166, 0);">
+
+        Dissatisfied
+
+    </button>
+
+
+    <button
+        type="button"
+        class="vote-option"
+        onclick="giveVote('Neutral', this)"
+        style="background-color: rgb(255, 251, 0);">
+
+        Neutral
+
+    </button>
+
+
+    <button
+        type="button"
+        class="vote-option"
+        onclick="giveVote('Satisfied', this)"
+        style="background-color: rgb(166, 255, 0);">
+
+        Satisfied
+
+    </button>
+
+
+    <button
+        type="button"
+        class="vote-option"
+        onclick="giveVote('Very Satisfied', this)"
+        style="background-color: rgb(0, 255, 0);">
+
+        Very Satisfied
+
+    </button>
+
+</div>
+
+<p id="voteResult"></p>
 
                 </div>
 
@@ -668,48 +656,66 @@ $conn->close();
 
 
             <!-- Contact Form -->
-            <div class="col-md-7">
+            <!-- Contact Form -->
+<div class="col-md-7">
 
-                <div class="contact-form">
+    <div class="contact-form">
 
-                    <h4 class="text-dark mb-4">
-                        Send Me a Message
-                    </h4>
+        <h4 class="text-dark mb-4">
+            Send Me a Message
+        </h4>
 
-                    <div class="mb-3">
+        <form action="proses_pesan.php" method="POST">
 
-                        <input type="text"
-                               class="form-control"
-                               placeholder="Your Name" id="name">
+            <div class="mb-3">
 
-                    </div>
-
-
-                    <div class="mb-3">
-
-                        <input type="email"
-                               class="form-control"
-                               placeholder="Your Email" id="email">
-
-                    </div>
-
-
-                    <div class="mb-3">
-
-                        <textarea class="form-control"
-                                  rows="5"
-                                  placeholder="Your Message" id="pesan"></textarea>
-
-                    </div>
-
-
-                    <button class="btn btn-primary send-btn">
-                        Send Message
-                    </button>
-
-                </div>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Name"
+                    name="nama"
+                    required>
 
             </div>
+
+
+            <div class="mb-3">
+
+                <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Your Email"
+                    name="email"
+                    required>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Your Message"
+                    name="pesan"
+                    required></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary send-btn">
+
+                Send Message
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
         </div>
 
