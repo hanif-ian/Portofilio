@@ -170,70 +170,47 @@
 
         <div class="row g-4">
 
-            <!-- Automation -->
-            <div class="col-md-4">
+         <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "20242024_db";
 
-                <div class="skill-card text-center">
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
-                    <h5>
-                        AUTOMATION
-                    </h5>
+$sql = "SELECT id, nama, deskripsi, gambar FROM service";
+// Execute the SQL query
+$result = $conn->query($sql);
 
-                    <img src="assets/img/robot.png"
-                         alt="Robot Icon">
+// Process the result set
+if ($result->num_rows > 0) {
+  // Output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo '<div class="col-md-4">';
 
-                    <p class="text-muted">
-                        Industrial automation,
-                        robotics, and control systems.
-                    </p>
+    echo '<div class="skill-card text-center">';
 
-                </div>
+    echo '<h5>' . $row['nama'] . '</h5>';
 
-            </div>
+    echo '<img src="assets/img/'. $row['gambar'] .'" alt="'. $row['gambar'] .'">';
 
+    echo '<p class="text-muted">' . $row['deskripsi'] . '</p>';
 
-            <!-- Electrical -->
-            <div class="col-md-4">
+    echo '</div>';
 
-                <div class="skill-card text-center">
+    echo '</div>';
+  }
+} else {
+  echo "0 results";
+}
 
-                    <h5>
-                        ELECTRICAL
-                    </h5>
-
-                    <img src="assets/img/Electrical.png"
-                         alt="Electrical Icon">
-
-                    <p class="text-muted">
-                        Electrical systems,
-                        circuits, sensors, and control.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PLC -->
-            <div class="col-md-4">
-
-                <div class="skill-card text-center">
-
-                    <h5>
-                        PLC PROGRAMMING
-                    </h5>
-
-                    <img src="assets/img/PLC.png"
-                         alt="PLC Icon">
-
-                    <p class="text-muted">
-                        PLC programming,
-                        ladder logic, and automation.
-                    </p>
-
-                </div>
-
-            </div>
+$conn->close();
+?>
 
         </div>
 
@@ -278,7 +255,69 @@
 
                 <h5>My Experience</h5>
 
-                <div class="experience-items">
+
+                 <?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "20242024_db";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, judul, deskripsi, periode, posisi FROM experience";
+
+$result = $conn->query($sql);
+
+$experiences = [];
+
+?>
+
+<div class="experience-items">
+
+<?php
+
+if ($result->num_rows > 0) {
+
+    while ($row = $result->fetch_assoc()) {
+
+        // Simpan data untuk JavaScript
+        $experiences[] = $row;
+
+        echo '
+        <button
+            type="button"
+            class="experience-btn"
+            onclick="showExperience(' . $row['id'] . ', event)">
+
+            <img
+                src="assets/img/ATMI.png"
+                alt="' . htmlspecialchars($row['judul']) . '">
+
+        </button>';
+    }
+
+} else {
+
+    echo "<p>Belum ada data experience.</p>";
+}
+
+?>
+
+</div>
+
+<script>
+    const experiences = <?= json_encode($experiences); ?>;
+</script>
+
+<?php
+$conn->close();
+?>
+                <!-- <div class="experience-items">
 
                     <button
                         type="button"
@@ -302,7 +341,7 @@
                         onclick="showExperience(2, event)">
                     </button>
 
-                </div>
+                </div> -->
 
             </div>
 
@@ -641,7 +680,7 @@
 
                         <input type="text"
                                class="form-control"
-                               placeholder="Your Name">
+                               placeholder="Your Name" id="name">
 
                     </div>
 
@@ -650,7 +689,7 @@
 
                         <input type="email"
                                class="form-control"
-                               placeholder="Your Email">
+                               placeholder="Your Email" id="email">
 
                     </div>
 
@@ -659,7 +698,7 @@
 
                         <textarea class="form-control"
                                   rows="5"
-                                  placeholder="Your Message"></textarea>
+                                  placeholder="Your Message" id="pesan"></textarea>
 
                     </div>
 

@@ -51,75 +51,40 @@ window.addEventListener("scroll", () => {
 /*==========
   card
   ==========*/
-const experiences = [
-
-    {
-        title: "ATMI",
-
-        description:
-            "D3 TMK (Teknik Mekatronika),angkatan 57 Nil Satis Nisi Optimum",
-
-        position:
-            "Tugas Akhir: On Progress",
-
-        period:
-            "Period: 2024 - 2027"
-    },
-
-    {
-        title: "Experience 2",
-
-        description:
-            "Pengalaman dalam bidang electrical dan sistem kontrol.",
-
-        position:
-            "Position: Electrical Engineering",
-
-        period:
-            "Period: 2024 - 2025"
-    },
-
-    {
-        title: "Experience 3",
-
-        description:
-            "Pengalaman dalam programming PLC, automation, dan industrial control system.",
-
-        position:
-            "Position: PLC Programmer",
-
-        period:
-            "Period: 2025"
-    }
-
-];
 
 
-function showExperience(index, event) {
+function showExperience(id, event) {
 
-    // Hentikan event agar tidak naik ke parent
     event.stopPropagation();
 
-    const experience = experiences[index];
+    console.log("ID yang diklik:", id);
+    console.log("Data experience:", experiences);
+
+    const experience = experiences.find(
+        item => item.id == id
+    );
+
+    if (!experience) {
+        console.log("Data experience tidak ditemukan!");
+        return;
+    }
 
     document.getElementById("experienceTitle").textContent =
-        experience.title;
+        experience.judul;
 
     document.getElementById("experienceDescription").textContent =
-        experience.description;
+        experience.deskripsi;
 
     document.getElementById("experiencePosition").textContent =
-        experience.position;
+        experience.posisi;
 
     document.getElementById("experiencePeriod").textContent =
-        experience.period;
-
+        experience.periode;
 
     const card = document.querySelector(".experience-wrapper");
 
     card.classList.add("flipped");
 }
-
 
 function backToExperience(event) {
 
