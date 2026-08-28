@@ -45,17 +45,11 @@ $stmt->bind_param(
 
 if ($stmt->execute()) {
 
-   echo "<script>
-            alert('Pesan berhasil dikirim!');
-            window.location.href = 'Program.php';
-          </script>";
+    echo "success";
 
 } else {
 
-    echo "<script>
-            alert('Pesan gagal dikirim!');
-            window.history.back();
-          </script>";
+    echo "error";
 
 }
 

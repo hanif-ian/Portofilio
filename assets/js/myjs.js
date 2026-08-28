@@ -334,22 +334,15 @@ function closeVote(event) {
 
 function giveVote(value, button) {
 
-    console.log(
-        "Vote yang dipilih:",
-        value
-    );
+    console.log("Vote yang dipilih:", value);
 
-
-    // Kirim langsung ke PHP
     fetch("simpan_vote.php", {
 
         method: "POST",
 
         headers: {
-
             "Content-Type":
                 "application/x-www-form-urlencoded"
-
         },
 
         body:
@@ -358,47 +351,25 @@ function giveVote(value, button) {
 
     })
 
-
-    .then(response => {
-
-        return response.text();
-
-    })
-
+    .then(response => response.text())
 
     .then(data => {
 
-        console.log(
-            "Response PHP:",
-            data
-        );
-
+        console.log("Response PHP:", data);
 
         if (data.trim() === "success") {
 
+            // Kalau tombol tersedia, beri efek selected
+            if (button) {
+                button.classList.add("selected");
+            }
 
-            /* =====================
-               VOTE BERHASIL
-            ===================== */
+            alert("Terima kasih! Vote berhasil dikirim.");
 
-            // Tandai tombol
-            button.classList.add(
-                "selected"
-            );
-
-
-            // Tampilkan alert
-            alert(
-                "Terima kasih! Vote berhasil dikirim."
-            );
-
-
-            // Update chart
+            // Update chart dari database
             loadChart();
 
-
-            // Tunggu sebentar kemudian
-            // kembali ke bagian depan
+            // Balik ke depan
             setTimeout(() => {
 
                 const card =
@@ -406,54 +377,137 @@ function giveVote(value, button) {
                         ".performance-wrapper"
                     );
 
+                if (card) {
+                    card.classList.remove("flipped");
+                }
 
-                card.classList.remove(
-                    "flipped"
-                );
-
-
-                // Hapus selected
-                button.classList.remove(
-                    "selected"
-                );
+                if (button) {
+                    button.classList.remove("selected");
+                }
 
             }, 500);
 
-
         } else {
 
+            alert("Vote gagal dikirim!");
 
-            /* =====================
-               VOTE GAGAL
-            ===================== */
-
-            alert(
-                "Vote gagal dikirim!"
-            );
-
-
-            console.error(
-                "Response PHP:",
-                data
-            );
+            console.error(data);
 
         }
 
     })
 
-
     .catch(error => {
 
-        console.error(
-            "Error:",
-            error
-        );
-
+        console.error("Error:", error);
 
         alert(
             "Terjadi kesalahan saat mengirim vote."
         );
 
     });
+
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+
+if (contactForm) {
+
+    contactForm.addEventListener(
+        "submit",
+        function(event) {
+
+            // PENTING
+            // Mencegah form pindah halaman
+            event.preventDefault();
+
+
+            console.log(
+                "Contact form dikirim menggunakan AJAX"
+            );
+
+
+            const formData =
+                new FormData(this);
+
+
+            fetch("proses_pesan.php", {
+
+                method: "POST",
+
+                body: formData
+
+            })
+
+            .then(response => {
+
+                return response.text();
+
+            })
+
+            .then(data => {
+
+                console.log(
+                    "Response PHP:",
+                    data
+                );
+
+
+                if (data.trim() === "success") {
+
+                    // Windows alert
+                    alert(
+                        "Pesan berhasil dikirim!"
+                    );
+
+
+                    // Kosongkan form
+                    contactForm.reset();
+
+
+                    // Refresh box pesan
+                    if (
+                        typeof loadMessages ===
+                        "function"
+                    ) {
+
+                        loadMessages();
+
+                    }
+
+                } else {
+
+                    alert(
+                        "Pesan gagal dikirim!"
+                    );
+
+                    console.error(data);
+
+                }
+
+            })
+
+            .catch(error => {
+
+                console.error(
+                    "Error:",
+                    error
+                );
+
+
+                alert(
+                    "Terjadi kesalahan saat mengirim pesan."
+                );
+
+            });
+
+        }
+    );
 
 }

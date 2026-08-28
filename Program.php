@@ -665,7 +665,7 @@ $conn->close();
             Send Me a Message
         </h4>
 
-        <form action="proses_pesan.php" method="POST">
+        <form id="contactForm">
 
             <div class="mb-3">
 

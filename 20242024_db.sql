@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2026 at 02:50 PM
+-- Generation Time: Aug 28, 2026 at 04:22 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -62,7 +62,17 @@ CREATE TABLE `pesan` (
 
 INSERT INTO `pesan` (`id`, `nama`, `email`, `pesan`, `tanggal`) VALUES
 (1, 'Anton', 'antonwisnuawm@gmail.com', 'baik banget orangnya', '2026-08-27 12:14:19'),
-(2, 'anton', 'antonwisnuawm@gmail.com', 'wowwww', '2026-08-27 12:16:34');
+(2, 'anton', 'antonwisnuawm@gmail.com', 'wowwww', '2026-08-27 12:16:34'),
+(3, 'hans', 'hanifaprillian1987@gmail.com', 'haloooo', '2026-08-28 01:05:58'),
+(4, 'hans', 'hanifaprillian1987@gmail.com', 'yoyoyoyoyoyo', '2026-08-28 01:11:56'),
+(5, 'hans', 'hanifaprillian1987@gmail.com', 'ouiiiiiiiii', '2026-08-28 01:12:38'),
+(6, 'hans', 'hanifaprillian1987@gmail.com', 'ouiiiiiiiii', '2026-08-28 01:13:09'),
+(7, 'hans', 'hanifaprillian1987@gmail.com', 'yiyyyy', '2026-08-28 01:21:45'),
+(8, 'hans', 'hanifaprillian1987@gmail.com', 'oiiiiiiii', '2026-08-28 01:26:31'),
+(9, 'hans', 'hanifaprillian1987@gmail.com', 'fghfghdfg', '2026-08-28 01:28:39'),
+(10, 'hans', 'hanifaprillian1987@gmail.com', 'asfdasdfsdaf', '2026-08-28 01:54:37'),
+(11, 'hans', 'hanifaprillian1987@gmail.com', 'tes', '2026-08-28 01:57:17'),
+(12, 'hans', 'hanifaprillian1987@gmail.com', 'tesss', '2026-08-28 02:08:49');
 
 -- --------------------------------------------------------
 
@@ -107,7 +117,14 @@ INSERT INTO `votes` (`id`, `pilihan`, `tanggal`) VALUES
 (2, 'Satisfied', '2026-08-27 12:39:20'),
 (3, 'Satisfied', '2026-08-27 12:39:24'),
 (4, 'Neutral', '2026-08-27 12:42:37'),
-(5, 'Very Satisfied', '2026-08-27 12:47:57');
+(5, 'Very Satisfied', '2026-08-27 12:47:57'),
+(6, 'Very Satisfied', '2026-08-28 01:06:12'),
+(7, 'Very Satisfied', '2026-08-28 01:06:30'),
+(8, 'Satisfied', '2026-08-28 01:06:40'),
+(9, 'Very Satisfied', '2026-08-28 02:09:42'),
+(10, 'Very Satisfied', '2026-08-28 02:09:50'),
+(11, 'Neutral', '2026-08-28 02:21:13'),
+(12, 'Neutral', '2026-08-28 02:21:25');
 
 --
 -- Indexes for dumped tables
@@ -151,7 +168,7 @@ ALTER TABLE `experience`
 -- AUTO_INCREMENT for table `pesan`
 --
 ALTER TABLE `pesan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `service`
@@ -163,7 +180,7 @@ ALTER TABLE `service`
 -- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
