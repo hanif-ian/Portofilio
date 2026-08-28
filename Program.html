@@ -170,47 +170,70 @@
 
         <div class="row g-4">
 
-         <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "20242024_db";
+            <!-- Automation -->
+            <div class="col-md-4">
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+                <div class="skill-card text-center">
 
-$sql = "SELECT id, nama, deskripsi, gambar FROM service";
-// Execute the SQL query
-$result = $conn->query($sql);
+                    <h5>
+                        AUTOMATION
+                    </h5>
 
-// Process the result set
-if ($result->num_rows > 0) {
-  // Output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo '<div class="col-md-4">';
+                    <img src="assets/img/robot.png"
+                         alt="Robot Icon">
 
-    echo '<div class="skill-card text-center">';
+                    <p class="text-muted">
+                        Industrial automation,
+                        robotics, and control systems.
+                    </p>
 
-    echo '<h5>' . $row['nama'] . '</h5>';
+                </div>
 
-    echo '<img src="assets/img/'. $row['gambar'] .'" alt="'. $row['gambar'] .'">';
+            </div>
 
-    echo '<p class="text-muted">' . $row['deskripsi'] . '</p>';
 
-    echo '</div>';
+            <!-- Electrical -->
+            <div class="col-md-4">
 
-    echo '</div>';
-  }
-} else {
-  echo "0 results";
-}
+                <div class="skill-card text-center">
 
-$conn->close();
-?>
+                    <h5>
+                        ELECTRICAL
+                    </h5>
+
+                    <img src="assets/img/Electrical.png"
+                         alt="Electrical Icon">
+
+                    <p class="text-muted">
+                        Electrical systems,
+                        circuits, sensors, and control.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PLC -->
+            <div class="col-md-4">
+
+                <div class="skill-card text-center">
+
+                    <h5>
+                        PLC PROGRAMMING
+                    </h5>
+
+                    <img src="assets/img/PLC.png"
+                         alt="PLC Icon">
+
+                    <p class="text-muted">
+                        PLC programming,
+                        ladder logic, and automation.
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -255,69 +278,7 @@ $conn->close();
 
                 <h5>My Experience</h5>
 
-
-                 <?php
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "20242024_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT id, judul, deskripsi, periode, posisi FROM experience";
-
-$result = $conn->query($sql);
-
-$experiences = [];
-
-?>
-
-<div class="experience-items">
-
-<?php
-
-if ($result->num_rows > 0) {
-
-    while ($row = $result->fetch_assoc()) {
-
-        // Simpan data untuk JavaScript
-        $experiences[] = $row;
-
-        echo '
-        <button
-            type="button"
-            class="experience-btn"
-            onclick="showExperience(' . $row['id'] . ', event)">
-
-            <img
-                src="assets/img/ATMI.png"
-                alt="' . htmlspecialchars($row['judul']) . '">
-
-        </button>';
-    }
-
-} else {
-
-    echo "<p>Belum ada data experience.</p>";
-}
-
-?>
-
-</div>
-
-<script>
-    const experiences = <?= json_encode($experiences); ?>;
-</script>
-
-<?php
-$conn->close();
-?>
-                <!-- <div class="experience-items">
+                <div class="experience-items">
 
                     <button
                         type="button"
@@ -341,7 +302,7 @@ $conn->close();
                         onclick="showExperience(2, event)">
                     </button>
 
-                </div> -->
+                </div>
 
             </div>
 
@@ -680,7 +641,7 @@ $conn->close();
 
                         <input type="text"
                                class="form-control"
-                               placeholder="Your Name" id="name">
+                               placeholder="Your Name">
 
                     </div>
 
@@ -689,7 +650,7 @@ $conn->close();
 
                         <input type="email"
                                class="form-control"
-                               placeholder="Your Email" id="email">
+                               placeholder="Your Email">
 
                     </div>
 
@@ -698,7 +659,7 @@ $conn->close();
 
                         <textarea class="form-control"
                                   rows="5"
-                                  placeholder="Your Message" id="pesan"></textarea>
+                                  placeholder="Your Message"></textarea>
 
                     </div>
 

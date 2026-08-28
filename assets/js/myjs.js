@@ -51,40 +51,75 @@ window.addEventListener("scroll", () => {
 /*==========
   card
   ==========*/
+const experiences = [
 
+    {
+        title: "ATMI",
 
-function showExperience(id, event) {
+        description:
+            "D3 TMK (Teknik Mekatronika),angkatan 57 Nil Satis Nisi Optimum",
 
-    event.stopPropagation();
+        position:
+            "Tugas Akhir: On Progress",
 
-    console.log("ID yang diklik:", id);
-    console.log("Data experience:", experiences);
+        period:
+            "Period: 2024 - 2027"
+    },
 
-    const experience = experiences.find(
-        item => item.id == id
-    );
+    {
+        title: "Experience 2",
 
-    if (!experience) {
-        console.log("Data experience tidak ditemukan!");
-        return;
+        description:
+            "Pengalaman dalam bidang electrical dan sistem kontrol.",
+
+        position:
+            "Position: Electrical Engineering",
+
+        period:
+            "Period: 2024 - 2025"
+    },
+
+    {
+        title: "Experience 3",
+
+        description:
+            "Pengalaman dalam programming PLC, automation, dan industrial control system.",
+
+        position:
+            "Position: PLC Programmer",
+
+        period:
+            "Period: 2025"
     }
 
+];
+
+
+function showExperience(index, event) {
+
+    // Hentikan event agar tidak naik ke parent
+    event.stopPropagation();
+
+    const experience = experiences[index];
+
     document.getElementById("experienceTitle").textContent =
-        experience.judul;
+        experience.title;
 
     document.getElementById("experienceDescription").textContent =
-        experience.deskripsi;
+        experience.description;
 
     document.getElementById("experiencePosition").textContent =
-        experience.posisi;
+        experience.position;
 
     document.getElementById("experiencePeriod").textContent =
-        experience.periode;
+        experience.period;
+
 
     const card = document.querySelector(".experience-wrapper");
 
     card.classList.add("flipped");
 }
+
 
 function backToExperience(event) {
 
